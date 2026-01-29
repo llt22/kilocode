@@ -28,13 +28,13 @@ module.exports = [
 	},
 	{
 		source: "/docs/basic-usage/connecting-providers",
-		destination: "/docs/getting-started/ai-providers",
+		destination: "/docs/ai-providers",
 		basePath: false,
 		permanent: true,
 	},
 	{
 		source: "/docs/providers/:path*",
-		destination: "/docs/getting-started/ai-providers",
+		destination: "/docs/ai-providers/:path*",
 		basePath: false,
 		permanent: true,
 	},
@@ -130,7 +130,7 @@ module.exports = [
 	},
 	{
 		source: "/docs/basic-usage/autocomplete/mistral-setup",
-		destination: "/docs/code-with-ai/features/autocomplete",
+		destination: "/docs/code-with-ai/features/autocomplete/mistral-setup",
 		basePath: false,
 		permanent: true,
 	},
@@ -253,6 +253,12 @@ module.exports = [
 	},
 	{
 		source: "/docs/agent-behavior/skills",
+		destination: "/docs/customize/skills",
+		basePath: false,
+		permanent: true,
+	},
+	{
+		source: "/docs/features/skills",
 		destination: "/docs/customize/skills",
 		basePath: false,
 		permanent: true,
