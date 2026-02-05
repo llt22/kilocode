@@ -1285,6 +1285,7 @@ export class ClineProvider
 					<link href="${codiconsUri}" rel="stylesheet" />
 					<script nonce="${nonce}">
 						window.IMAGES_BASE_URI = "${imagesUri}"
+						window.ICONS_BASE_URI = "${iconsUri}"
 						window.AUDIO_BASE_URI = "${audioUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 						window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
@@ -1367,6 +1368,7 @@ export class ClineProvider
 			<link href="${codiconsUri}" rel="stylesheet" />
 			<script nonce="${nonce}">
 				window.IMAGES_BASE_URI = "${imagesUri}"
+				window.ICONS_BASE_URI = "${iconsUri}"
 				window.AUDIO_BASE_URI = "${audioUri}"
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 				window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
@@ -2519,6 +2521,7 @@ export class ClineProvider
 			profileThresholds: profileThresholds ?? {},
 			cloudApiUrl: getRooCodeApiUrl(),
 			hasOpenedModeSelector: this.getGlobalState("hasOpenedModeSelector") ?? false,
+			hasCompletedOnboarding: this.getGlobalState("hasCompletedOnboarding"), // kilocode_change: Track onboarding completion - undefined means new user
 			systemNotificationsEnabled: systemNotificationsEnabled ?? false, // kilocode_change
 			dismissedNotificationIds: dismissedNotificationIds ?? [], // kilocode_change
 			morphApiKey, // kilocode_change
@@ -2587,6 +2590,7 @@ export class ClineProvider
 			| "clineMessages"
 			| "renderContext"
 			| "hasOpenedModeSelector"
+			| "hasCompletedOnboarding" // kilocode_change
 			| "version"
 			| "shouldShowAnnouncement"
 			| "hasSystemPromptOverride"

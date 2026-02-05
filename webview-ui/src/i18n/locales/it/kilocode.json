@@ -1,4 +1,19 @@
 {
+	"onboarding": {
+		"title": "Come vorresti iniziare?",
+		"freeModels": {
+			"title": "Modelli gratuiti",
+			"description": "Inizia a programmare subito"
+		},
+		"premiumModels": {
+			"title": "Modelli premium",
+			"description": "Registrati. I nuovi utenti ricevono 5 $ di crediti"
+		},
+		"byok": {
+			"title": "Porta la tua chiave",
+			"description": "Avanzato. Usa il tuo account o abbonamento"
+		}
+	},
 	"welcome": {
 		"greeting": "Benvenuto in Kilo Code!",
 		"introText1": "Kilo Code è un agente di coding AI gratuito e open source.",
@@ -25,6 +40,11 @@
 		"modelUnavailable": "⚠️ Il modello {{model}} non è disponibile. Cambia a un modello diverso per continuare.",
 		"continueWith": "Continua con {{model}}",
 		"continue": "Continua"
+	},
+	"unauthorizedError": {
+		"title": "Devi accedere per usare il modello {{modelId}}",
+		"message": "Accedi o crea un account per accedere a oltre 500 modelli, utilizzare crediti al costo effettivo o portare la tua chiave.",
+		"loginButton": "Accedi"
 	},
 	"pricing": {
 		"costUnknown": "costo sconosciuto",
@@ -211,6 +231,7 @@
 	},
 	"ideaSuggestionsBox": {
 		"newHere": "Nuovo qui?",
+		"tryOneOfThese": "Prova una di queste idee per iniziare:",
 		"suggestionText": "<suggestionButton>Clicca qui</suggestionButton> per un'idea fantastica, poi tocca <sendIcon /> e guardami fare magie!",
 		"ideas": {
 			"idea1": "Crea una sfera 3D rotante e luminosa che risponde ai movimenti del mouse. Fai funzionare l'app nel browser.",

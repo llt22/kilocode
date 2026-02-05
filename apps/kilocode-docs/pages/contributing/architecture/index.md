@@ -3,8 +3,6 @@ title: "Architecture Overview"
 description: "Overview of Kilo Code architecture"
 ---
 
-s
-
 # Architecture Overview
 
 This document provides a high-level overview of Kilo Code's architecture to help contributors understand how the different components fit together.
@@ -46,20 +44,7 @@ Kilo Code is a VS Code extension built with TypeScript that connects to various 
 
 ### Features
 
-These pages document the architecture and design of a current or planned feature, as well as any unique development patterns.
-
-| Feature                                                            | Description                                |
-| ------------------------------------------------------------------ | ------------------------------------------ |
-| [Annual Billing](./annual-billing.md)                              | Annual subscription billing                |
-| [Enterprise MCP Controls](./enterprise-mcp-controls.md)            | Admin controls for MCP server allowlists   |
-| [Onboarding Improvements](./onboarding-engagement-improvements.md) | User onboarding and engagement features    |
-| [Organization Modes Library](./organization-modes-library.md)      | Shared modes for teams and enterprise      |
-| [Agentic Security Reviews](./security-reviews.md)                  | AI-powered security vulnerability analysis |
-| [Track Repo URL](./track-repo-url.md)                              | Usage tracking by repository/project       |
-| [Vercel AI Gateway](./vercel-ai-gateway.md)                        | Vercel AI Gateway integration              |
-| [Voice Transcription](./voice-transcription.md)                    | Live voice input for chat                  |
-
-To propose a new feature design, consider using the [feature template](./feature-template.md).
+For detailed documentation on current and planned features, see the [Architecture Features](/docs/contributing/architecture/features) page.
 
 ## Key Concepts
 
@@ -158,5 +143,5 @@ The project uses:
 
 ## Further Reading
 
-- [Development Environment](/contributing/development-environment) - Setup guide
-- [Tools Reference](/features/tools/tool-use-overview) - Available tools
+- [Development Environment](/docs/contributing/development-environment) - Setup guide
+- [Tools Reference](/docs/features/tools/tool-use-overview) - Available tools

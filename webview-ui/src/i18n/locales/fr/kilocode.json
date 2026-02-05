@@ -1,4 +1,19 @@
 {
+	"onboarding": {
+		"title": "Comment souhaitez-vous commencer ?",
+		"freeModels": {
+			"title": "Modèles gratuits",
+			"description": "Commencez à coder immédiatement"
+		},
+		"premiumModels": {
+			"title": "Modèles premium",
+			"description": "Inscrivez-vous. Les nouveaux utilisateurs reçoivent 5 $ de crédits"
+		},
+		"byok": {
+			"title": "Apportez votre propre clé",
+			"description": "Avancé. Utilisez votre propre compte ou abonnement"
+		}
+	},
 	"welcome": {
 		"greeting": "Bienvenue dans Kilo Code !",
 		"introText1": "Kilo Code est un agent de codage IA gratuit et open source.",
@@ -25,6 +40,11 @@
 		"modelUnavailable": "⚠️ Le modèle {{model}} n'est pas disponible. Changez vers un modèle différent pour continuer.",
 		"continueWith": "Continuer avec {{model}}",
 		"continue": "Continuer"
+	},
+	"unauthorizedError": {
+		"title": "Tu dois te connecter pour utiliser le modèle {{modelId}}",
+		"message": "Connecte-toi ou crée un compte pour accéder à plus de 500 modèles, utiliser des crédits au prix coûtant ou apporter ta propre clé.",
+		"loginButton": "Se Connecter"
 	},
 	"pricing": {
 		"costUnknown": "coût inconnu",
@@ -218,6 +238,7 @@
 	},
 	"ideaSuggestionsBox": {
 		"newHere": "Nouveau ici ?",
+		"tryOneOfThese": "Essaie une de ces idées pour commencer :",
 		"suggestionText": "<suggestionButton>Cliquez ici</suggestionButton> pour une idée géniale, puis appuyez sur <sendIcon /> et regardez-moi faire de la magie !",
 		"ideas": {
 			"idea1": "Créez une sphère 3D rotative et brillante qui répond aux mouvements de la souris. Faites fonctionner l'application dans le navigateur.",

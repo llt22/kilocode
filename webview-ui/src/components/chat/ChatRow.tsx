@@ -82,6 +82,7 @@ import { KiloChatRowGutterBar } from "../kilocode/chat/KiloChatRowGutterBar"
 import { StandardTooltip } from "../ui"
 import { FastApplyChatDisplay } from "./kilocode/FastApplyChatDisplay"
 import { InvalidModelWarning } from "../kilocode/chat/InvalidModelWarning"
+import { UnauthorizedWarning } from "../kilocode/chat/UnauthorizedWarning"
 import { formatFileSize } from "@/lib/formatting-utils"
 import ChatTimestamps from "./ChatTimestamps"
 import { removeLeadingNonAlphanumeric } from "@/utils/removeLeadingNonAlphanumeric"
@@ -434,7 +435,7 @@ export const ChatRowContent = ({
 		display: "flex",
 		alignItems: "center",
 		gap: "10px",
-		marginBottom: "10px",
+		marginBottom: "4px", // kilocode_change
 		wordBreak: "break-word",
 	}
 
@@ -1361,7 +1362,7 @@ export const ChatRowContent = ({
 									isEditing ? "overflow-visible" : "overflow-hidden", // kilocode_change
 									isEditing
 										? "bg-vscode-editor-background text-vscode-editor-foreground"
-										: "cursor-text p-1 bg-vscode-editor-foreground/70 text-vscode-editor-background",
+										: "cursor-text p-1 bg-vscode-sideBar-background text-vscode-foreground", // kilocode_change
 								)}>
 								{isEditing ? (
 									<div className="flex flex-col gap-2">
@@ -1871,6 +1872,9 @@ export const ChatRowContent = ({
 
 				case "payment_required_prompt": {
 					return <LowCreditWarning message={message} />
+				}
+				case "unauthorized_prompt": {
+					return <UnauthorizedWarning message={message} />
 				}
 				case "invalid_model": {
 					return <InvalidModelWarning message={message} isLast={isLast} />

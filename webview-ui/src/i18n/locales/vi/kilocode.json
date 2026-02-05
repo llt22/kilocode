@@ -1,4 +1,19 @@
 {
+	"onboarding": {
+		"title": "Bạn muốn bắt đầu như thế nào?",
+		"freeModels": {
+			"title": "Mô hình miễn phí",
+			"description": "Bắt đầu lập trình ngay"
+		},
+		"premiumModels": {
+			"title": "Mô hình cao cấp",
+			"description": "Đăng ký. Người dùng mới nhận $5 tín dụng"
+		},
+		"byok": {
+			"title": "Sử dụng khóa của bạn",
+			"description": "Nâng cao. Sử dụng tài khoản hoặc đăng ký của bạn"
+		}
+	},
 	"welcome": {
 		"greeting": "Chào mừng bạn đến với Kilo Code!",
 		"introText1": "Kilo Code là một agent lập trình AI miễn phí và mã nguồn mở.",
@@ -25,6 +40,11 @@
 		"modelUnavailable": "⚠️ Mô hình {{model}} không khả dụng. Chuyển sang mô hình khác để tiếp tục.",
 		"continueWith": "Tiếp tục với {{model}}",
 		"continue": "Tiếp tục"
+	},
+	"unauthorizedError": {
+		"title": "Bạn cần đăng nhập để sử dụng mô hình {{modelId}}",
+		"message": "Đăng nhập hoặc tạo tài khoản để truy cập hơn 500 mô hình, sử dụng tín dụng với giá gốc hoặc sử dụng khóa của riêng bạn.",
+		"loginButton": "Đăng Nhập"
 	},
 	"pricing": {
 		"costUnknown": "chi phí không xác định",
@@ -211,6 +231,7 @@
 	},
 	"ideaSuggestionsBox": {
 		"newHere": "Mới ở đây?",
+		"tryOneOfThese": "Thử một trong những ý tưởng này để bắt đầu:",
 		"suggestionText": "<suggestionButton>Nhấp vào đây</suggestionButton> để có một ý tưởng tuyệt vời, sau đó chạm vào <sendIcon /> và xem tôi làm phép thuật!",
 		"ideas": {
 			"idea1": "Tạo một hình cầu 3D quay và phát sáng phản ứng với chuyển động chuột. Làm cho ứng dụng hoạt động trong trình duyệt.",

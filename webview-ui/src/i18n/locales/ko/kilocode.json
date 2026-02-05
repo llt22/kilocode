@@ -1,4 +1,19 @@
 {
+	"onboarding": {
+		"title": "어떻게 시작하시겠습니까?",
+		"freeModels": {
+			"title": "무료 모델",
+			"description": "바로 코딩 시작"
+		},
+		"premiumModels": {
+			"title": "프리미엄 모델",
+			"description": "가입하기. 신규 사용자는 5달러 크레딧 제공"
+		},
+		"byok": {
+			"title": "내 키 사용",
+			"description": "고급. 본인 계정 또는 구독 사용"
+		}
+	},
 	"welcome": {
 		"greeting": "Kilo Code에 오신 것을 환영합니다!",
 		"introText1": "Kilo Code는 무료 오픈소스 AI 코딩 에이전트입니다.",
@@ -25,6 +40,11 @@
 		"modelUnavailable": "⚠️ {{model}} 모델을 사용할 수 없습니다. 계속하려면 다른 모델로 변경하세요.",
 		"continueWith": "{{model}}로 계속",
 		"continue": "계속"
+	},
+	"unauthorizedError": {
+		"title": "{{modelId}} 모델을 사용하려면 로그인이 필요합니다",
+		"message": "로그인하거나 계정을 만들어 500개 이상의 모델에 액세스하고, 원가로 크레딧을 사용하거나, 자신의 키를 사용하세요.",
+		"loginButton": "로그인"
 	},
 	"pricing": {
 		"costUnknown": "비용 알 수 없음",
@@ -218,6 +238,7 @@
 	},
 	"ideaSuggestionsBox": {
 		"newHere": "처음이신가요?",
+		"tryOneOfThese": "시작하려면 이 아이디어 중 하나를 시도해보세요:",
 		"suggestionText": "멋진 아이디어를 위해 <suggestionButton>여기를 클릭</suggestionButton>하세요. 그다음 <sendIcon />를 탭하고 제가 마법을 부리는 것을 보세요!",
 		"ideas": {
 			"idea1": "마우스 움직임에 반응하는 회전하고 빛나는 3D 구체를 만드세요. 앱이 브라우저에서 작동하도록 하세요.",

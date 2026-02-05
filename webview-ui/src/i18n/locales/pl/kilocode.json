@@ -1,4 +1,19 @@
 {
+	"onboarding": {
+		"title": "Jak chcesz zacząć?",
+		"freeModels": {
+			"title": "Darmowe modele",
+			"description": "Zacznij kodować od razu"
+		},
+		"premiumModels": {
+			"title": "Modele premium",
+			"description": "Zarejestruj się. Nowi użytkownicy otrzymują 5 $ kredytu"
+		},
+		"byok": {
+			"title": "Użyj własnego klucza",
+			"description": "Zaawansowane. Użyj własnego konta lub subskrypcji"
+		}
+	},
 	"welcome": {
 		"greeting": "Witaj w Kilo Code!",
 		"introText1": "Kilo Code to darmowy, otwartoźródłowy agent kodowania AI.",
@@ -18,6 +33,11 @@
 		"previous": "Poprzednia",
 		"next": "Następna",
 		"page": "Strona {{page}} / {{count}}"
+	},
+	"unauthorizedError": {
+		"title": "Musisz się zalogować, aby użyć modelu {{modelId}}",
+		"message": "Zaloguj się lub utwórz konto, aby uzyskać dostęp do ponad 500 modeli, korzystać z kredytów po cenie kosztowej lub przynieść własny klucz.",
+		"loginButton": "Zaloguj się"
 	},
 	"pricing": {
 		"costUnknown": "koszt nieznany",
@@ -211,6 +231,7 @@
 	},
 	"ideaSuggestionsBox": {
 		"newHere": "Nowy tutaj?",
+		"tryOneOfThese": "Wypróbuj jeden z tych pomysłów, aby zacząć:",
 		"suggestionText": "<suggestionButton>Kliknij tutaj</suggestionButton> dla fajnego pomysłu, następnie dotknij <sendIcon /> i zobacz, jak robię magię!",
 		"ideas": {
 			"idea1": "Stwórz obracającą się, świecącą kulę 3D, która reaguje na ruchy myszy. Spraw, aby aplikacja działała w przeglądarce.",

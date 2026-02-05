@@ -39,6 +39,7 @@ Your work is always pushed to GitHub, ensuring nothing is lost.
 ## How Cloud Agents Work
 
 - Each user receives an **isolated Linux container** with common dev tools preinstalled (Node.js, git, gh CLI, glab CLI, etc.).
+- Python is not included in the base image, but `apt` is available so you can install it or other packages as needed.
 - All Cloud Agent chats share a **single container instance**, while each session gets its own workspace directory.
 - When a session begins:
 
@@ -88,7 +89,7 @@ You can customize each Cloud Agent session by also defining env vars and startup
 
 ## Skills
 
-Cloud Agents support project-level [skills](./cli#skills) stored in your repository. When your repo is cloned, any skills in `.kilocode/skills/` are automatically available.
+Cloud Agents support project-level [skills](/docs/code-with-ai/platforms/cli#skills) stored in your repository. When your repo is cloned, any skills in `.kilocode/skills/` are automatically available.
 
 {% callout type="note" %}
 Global skills (`~/.kilocode/skills/`) are not available in Cloud Agents since there is no persistent user home directory.
