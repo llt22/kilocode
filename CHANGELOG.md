@@ -1,5 +1,13 @@
 # kilo-code
 
+## 5.3.1
+
+### Patch Changes
+
+- [#5638](https://github.com/Kilo-Org/kilocode/pull/5638) [`a5b9106`](https://github.com/Kilo-Org/kilocode/commit/a5b9106e6cebc1a63c1ef5fa507cfaab65aa8ebc) Thanks [@Drilmo](https://github.com/Drilmo)! - fix(agent-manager): sync messages when panel is reopened
+
+    Fixed a bug where closing and reopening the Agent Manager panel would show "Waiting for agent response..." instead of the conversation messages.
+
 ## 5.3.0
 
 ### Minor Changes
