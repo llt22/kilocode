@@ -6,7 +6,12 @@
   <a href="https://www.reddit.com/r/kilocode/"><img src="https://img.shields.io/badge/Join%20r%2Fkilocode-D84315?style=flat&logo=reddit&logoColor=white" alt="Reddit"></a>
 </p>
 
-# 🚀 Kilo
+# 🚀 Kilo (Fork)
+
+> **This is a fork of [Kilo Code](https://github.com/Kilo-Org/kilocode)** with the following enhancement:
+>
+> ### ✅ Restored XML Tool Protocol Selection
+> The upstream removed XML tool protocol support ([d00d9ed](https://github.com/Kilo-Org/kilocode/commit/d00d9ed)). This fork restores it, allowing models that don't support native tools to continue working with XML protocol. A tool protocol selector is available in the API settings UI.
 
 > Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.
 > #1 on OpenRouter. 1.5M+ Kilo Coders. 25T+ tokens processed
