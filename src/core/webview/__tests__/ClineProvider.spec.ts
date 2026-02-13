@@ -235,6 +235,7 @@ vi.mock("../../task/Task", () => ({
 		setRootTask: vi.fn(),
 		taskId: options?.historyItem?.id || "test-task-id",
 		emit: vi.fn(),
+		getCumulativeTotalCost: vi.fn().mockReturnValue(0), // kilocode_change
 	})),
 }))
 
@@ -379,6 +380,7 @@ describe("ClineProvider", () => {
 				setRootTask: vi.fn(),
 				taskId: options?.historyItem?.id || "test-task-id",
 				emit: vi.fn(),
+				getCumulativeTotalCost: vi.fn().mockReturnValue(0), // kilocode_change
 			}
 
 			Object.defineProperty(task, "messageManager", {
