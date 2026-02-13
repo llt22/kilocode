@@ -1110,7 +1110,7 @@ export const PROVIDER_DEFAULT_MODELS: Record<ProviderName, string> = {
 	synthetic: "synthetic-model",
 	"sap-ai-core": "gpt-4o",
 	baseten: "zai-org/GLM-4.6",
-	corethink: "corethink"
+	corethink: "corethink",
 }
 
 /**

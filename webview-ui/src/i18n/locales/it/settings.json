@@ -104,6 +104,9 @@
 		"mistralProvider": "Mistral",
 		"mistralApiKeyLabel": "Chiave API:",
 		"mistralApiKeyPlaceholder": "Inserisci la tua chiave API Mistral",
+		"voyageProvider": "Voyage AI",
+		"voyageApiKeyLabel": "Chiave API Voyage AI",
+		"voyageApiKeyPlaceholder": "Inserisci la tua chiave API Voyage AI",
 		"openaiCompatibleProvider": "Compatibile con OpenAI",
 		"openaiCompatibleResponsesProvider": "Compatibile con OpenAI (Responses)",
 		"openAiKeyLabel": "Chiave API OpenAI",
@@ -178,7 +181,8 @@
 			"ollamaBaseUrlRequired": "È richiesto l'URL di base di Ollama",
 			"baseUrlRequired": "È richiesto l'URL di base",
 			"modelDimensionMinValue": "La dimensione del modello deve essere maggiore di 0",
-			"openRouterApiKeyRequired": "Chiave API OpenRouter è richiesta"
+			"openRouterApiKeyRequired": "Chiave API OpenRouter è richiesta",
+			"voyageApiKeyRequired": "Chiave API Voyage AI è richiesta"
 		},
 		"optional": "opzionale",
 		"advancedConfigLabel": "Configurazione avanzata",

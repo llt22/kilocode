@@ -104,6 +104,9 @@
 		"mistralProvider": "Mistral",
 		"mistralApiKeyLabel": "Kunci API:",
 		"mistralApiKeyPlaceholder": "Masukkan kunci API Mistral Anda",
+		"voyageProvider": "Voyage AI",
+		"voyageApiKeyLabel": "Kunci API Voyage AI",
+		"voyageApiKeyPlaceholder": "Masukkan kunci API Voyage AI kamu",
 		"openaiCompatibleProvider": "OpenAI Compatible",
 		"openaiCompatibleResponsesProvider": "OpenAI Compatible (Responses)",
 		"openAiKeyLabel": "OpenAI API Key",
@@ -178,7 +181,8 @@
 			"ollamaBaseUrlRequired": "URL dasar Ollama diperlukan",
 			"baseUrlRequired": "URL dasar diperlukan",
 			"modelDimensionMinValue": "Dimensi model harus lebih besar dari 0",
-			"openRouterApiKeyRequired": "Kunci API OpenRouter diperlukan"
+			"openRouterApiKeyRequired": "Kunci API OpenRouter diperlukan",
+			"voyageApiKeyRequired": "Kunci API Voyage AI diperlukan"
 		},
 		"optional": "opsional",
 		"advancedConfigLabel": "Konfigurasi Lanjutan",

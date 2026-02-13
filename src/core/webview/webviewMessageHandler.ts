@@ -3410,6 +3410,14 @@ export const webviewMessageHandler = async (
 						settings.codebaseIndexOpenRouterApiKey,
 					)
 				}
+				// kilocode_change start
+				if (settings.codebaseIndexVoyageApiKey !== undefined) {
+					await provider.contextProxy.storeSecret(
+						"codebaseIndexVoyageApiKey",
+						settings.codebaseIndexVoyageApiKey,
+					)
+				}
+				// kilocode_change end
 
 				// Send success response first - settings are saved regardless of validation
 				await provider.postMessageToWebview({
@@ -3548,6 +3556,7 @@ export const webviewMessageHandler = async (
 				"codebaseIndexVercelAiGatewayApiKey",
 			))
 			const hasOpenRouterApiKey = !!(await provider.context.secrets.get("codebaseIndexOpenRouterApiKey"))
+			const hasVoyageApiKey = !!(await provider.context.secrets.get("codebaseIndexVoyageApiKey")) // kilocode_change
 
 			provider.postMessageToWebview({
 				type: "codeIndexSecretStatus",
@@ -3559,6 +3568,7 @@ export const webviewMessageHandler = async (
 					hasMistralApiKey,
 					hasVercelAiGatewayApiKey,
 					hasOpenRouterApiKey,
+					hasVoyageApiKey, // kilocode_change
 				},
 			})
 			break
