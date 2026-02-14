@@ -370,6 +370,8 @@
 		"requestyUseCustomBaseUrl": "사용자 정의 기본 URL 사용",
 		"anthropicApiKey": "Anthropic API 키",
 		"getAnthropicApiKey": "Anthropic API 키 받기",
+		"apertisApiKey": "Apertis API 키",
+		"getApertisApiKey": "Apertis API 키 받기",
 		"anthropicUseAuthToken": "X-Api-Key 대신 Authorization 헤더로 Anthropic API 키 전달",
 		"anthropicUseAzureDeployment": "Azure 배포 이름 사용",
 		"anthropicAzureDeploymentPlaceholder": "배포 이름 입력...",

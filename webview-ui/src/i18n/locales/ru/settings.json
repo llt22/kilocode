@@ -370,6 +370,8 @@
 		"requestyUseCustomBaseUrl": "Использовать пользовательский базовый URL",
 		"anthropicApiKey": "Anthropic API-ключ",
 		"getAnthropicApiKey": "Получить Anthropic API-ключ",
+		"apertisApiKey": "Apertis API-ключ",
+		"getApertisApiKey": "Получить Apertis API-ключ",
 		"anthropicUseAuthToken": "Передавать Anthropic API-ключ как Authorization-заголовок вместо X-Api-Key",
 		"anthropicUseAzureDeployment": "Использовать имя развертывания Azure",
 		"anthropicAzureDeploymentPlaceholder": "Введите имя развертывания...",

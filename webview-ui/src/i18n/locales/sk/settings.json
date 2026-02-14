@@ -403,6 +403,8 @@
 		"openRouterTransformsText": "Komprimovať prompty a reťazce správ na veľkosť kontextu (<a>Transformácie OpenRouter</a>)",
 		"anthropicApiKey": "Kľúč API Anthropic",
 		"getAnthropicApiKey": "Získať kľúč API Anthropic",
+		"apertisApiKey": "Kľúč API Apertis",
+		"getApertisApiKey": "Získať kľúč API Apertis",
 		"anthropicUseAuthToken": "Odovzdávať kľúč API Anthropic ako hlavičku Authorization namiesto X-Api-Key",
 		"anthropic1MContextBetaLabel": "Povoliť 1M okno kontextu (Beta)",
 		"anthropic1MContextBetaDescription": "Rozšíriť okno kontextu na 1 milión tokenov pre Claude Sonnet 4",

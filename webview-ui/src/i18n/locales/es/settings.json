@@ -384,6 +384,8 @@
 		"anthropic1MContextBetaDescription": "Amplía la ventana de contexto a 1 millón de tokens para Claude Sonnet 4",
 		"anthropicUseAzureDeployment": "Usar nombre de despliegue de Azure",
 		"anthropicAzureDeploymentPlaceholder": "Introduce el nombre del despliegue...",
+		"apertisApiKey": "Clave API de Apertis",
+		"getApertisApiKey": "Obtener clave API de Apertis",
 		"awsBedrock1MContextBetaLabel": "Habilitar ventana de contexto de 1M (Beta)",
 		"awsBedrock1MContextBetaDescription": "Amplía la ventana de contexto a 1 millón de tokens para Claude Sonnet 4",
 		"vertex1MContextBetaLabel": "Habilitar ventana de contexto de 1M (Beta)",

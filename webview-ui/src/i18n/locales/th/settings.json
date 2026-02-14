@@ -404,6 +404,8 @@
 		"openRouterTransformsText": "บีบอัดพรอมต์และสายข้อความให้มีขนาดบริบท (<a>OpenRouter Transforms</a>)",
 		"anthropicApiKey": "คีย์ API ของ Anthropic",
 		"getAnthropicApiKey": "รับคีย์ API ของ Anthropic",
+		"apertisApiKey": "คีย์ API ของ Apertis",
+		"getApertisApiKey": "รับคีย์ API ของ Apertis",
 		"anthropicUseAuthToken": "ส่งคีย์ API ของ Anthropic เป็นส่วนหัว Authorization แทน X-Api-Key",
 		"anthropicUseAzureDeployment": "ใช้ชื่อการปรับใช้ Azure",
 		"anthropicAzureDeploymentPlaceholder": "ป้อนชื่อการปรับใช้...",

@@ -409,6 +409,8 @@
 		"openRouterTransformsText": "Стискати підказки та ланцюжки повідомлень до розміру контексту (<a>Перетворення OpenRouter</a>)",
 		"anthropicApiKey": "Ключ API Anthropic",
 		"getAnthropicApiKey": "Отримати ключ API Anthropic",
+		"apertisApiKey": "Ключ API Apertis",
+		"getApertisApiKey": "Отримати ключ API Apertis",
 		"anthropicUseAuthToken": "Передавати ключ API Anthropic як заголовок Authorization замість X-Api-Key",
 		"anthropic1MContextBetaLabel": "Увімкнути контекстне вікно 1M (Beta)",
 		"anthropic1MContextBetaDescription": "Розширити контекстне вікно до 1 мільйона токенів для Claude Sonnet 4",

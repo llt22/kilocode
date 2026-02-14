@@ -378,6 +378,8 @@
 		"requestyUseCustomBaseUrl": "Sử dụng URL cơ sở tùy chỉnh",
 		"anthropicApiKey": "Khóa API Anthropic",
 		"getAnthropicApiKey": "Lấy khóa API Anthropic",
+		"apertisApiKey": "Khóa API Apertis",
+		"getApertisApiKey": "Lấy khóa API Apertis",
 		"anthropicUseAuthToken": "Truyền khóa API Anthropic dưới dạng tiêu đề Authorization thay vì X-Api-Key",
 		"anthropicUseAzureDeployment": "Sử dụng tên triển khai Azure",
 		"anthropicAzureDeploymentPlaceholder": "Nhập tên triển khai...",

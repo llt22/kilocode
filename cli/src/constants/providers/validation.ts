@@ -53,5 +53,6 @@ export const PROVIDER_REQUIRED_FIELDS: Record<ProviderName, string[]> = {
 	"virtual-quota-fallback": [], // Has array validation
 	minimax: ["minimaxBaseUrl", "minimaxApiKey", "apiModelId"],
 	baseten: ["basetenApiKey", "apiModelId"],
+	apertis: ["apertisApiKey", "apertisModelId"], // kilocode_change
 	corethink: ["corethinkApiKey", "corethinkModelId"],
 }

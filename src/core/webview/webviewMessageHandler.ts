@@ -907,6 +907,7 @@ export const webviewMessageHandler = async (
 						inception: {},
 						kilocode: {},
 						gemini: {},
+						apertis: {},
 						// kilocode_change end
 						openrouter: {},
 						"vercel-ai-gateway": {},

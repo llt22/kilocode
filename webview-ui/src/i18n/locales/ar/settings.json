@@ -408,6 +408,8 @@
 		"openRouterTransformsText": "ضغط الموجهات لتناسب حجم السياق (<a>OpenRouter Transforms</a>)",
 		"anthropicApiKey": "مفتاح Anthropic",
 		"getAnthropicApiKey": "احصل على مفتاح Anthropic",
+		"apertisApiKey": "مفتاح Apertis API",
+		"getApertisApiKey": "احصل على مفتاح Apertis API",
 		"anthropicUseAuthToken": "إرسال المفتاح في ترويسة Authorization بدل X-Api-Key",
 		"anthropicUseAzureDeployment": "استخدام اسم نشر Azure",
 		"anthropicAzureDeploymentPlaceholder": "أدخل اسم النشر...",

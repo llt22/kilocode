@@ -381,6 +381,8 @@
 		"requestyUseCustomBaseUrl": "Benutzerdefinierte Basis-URL verwenden",
 		"anthropicApiKey": "Anthropic API-Schlüssel",
 		"getAnthropicApiKey": "Anthropic API-Schlüssel erhalten",
+		"apertisApiKey": "Apertis API-Schlüssel",
+		"getApertisApiKey": "Apertis API-Schlüssel erhalten",
 		"anthropicUseAuthToken": "Anthropic API-Schlüssel als Authorization-Header anstelle von X-Api-Key übergeben",
 		"anthropicUseAzureDeployment": "Azure-Bereitstellungsname verwenden",
 		"anthropicAzureDeploymentPlaceholder": "Bereitstellungsname eingeben...",

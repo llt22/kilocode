@@ -370,6 +370,8 @@
 		"requestyUseCustomBaseUrl": "Użyj niestandardowego bazowego URL",
 		"anthropicApiKey": "Klucz API Anthropic",
 		"getAnthropicApiKey": "Uzyskaj klucz API Anthropic",
+		"apertisApiKey": "Klucz API Apertis",
+		"getApertisApiKey": "Uzyskaj klucz API Apertis",
 		"anthropicUseAuthToken": "Przekaż klucz API Anthropic jako nagłówek Authorization zamiast X-Api-Key",
 		"anthropicUseAzureDeployment": "Użyj nazwy wdrożenia Azure",
 		"anthropicAzureDeploymentPlaceholder": "Wprowadź nazwę wdrożenia...",
