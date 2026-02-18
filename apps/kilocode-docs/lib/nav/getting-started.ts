@@ -46,6 +46,20 @@ export const GettingStartedNav: NavSection[] = [
 				href: "/getting-started/migrating",
 				children: "Migrating from Cursor",
 			},
+			{
+				href: "/getting-started/troubleshooting",
+				children: "Troubleshooting",
+				subLinks: [
+					{
+						href: "/getting-started/troubleshooting/troubleshooting-extension",
+						children: "Extension Troubleshooting",
+					},
+				],
+			},
+			{
+				href: "/getting-started/using-docs-with-agents",
+				children: "Using Docs with Agents",
+			},
 		],
 	},
 ]

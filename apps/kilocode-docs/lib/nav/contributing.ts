@@ -35,6 +35,10 @@ export const ContributingNav: NavSection[] = [
 						children: "Annual Billing",
 					},
 					{
+						href: "/contributing/architecture/benchmarking",
+						children: "Benchmarking",
+					},
+					{
 						href: "/contributing/architecture/enterprise-mcp-controls",
 						children: "Enterprise MCP Controls",
 					},
