@@ -1,5 +1,11 @@
 # kilo-code
 
+## 5.8.2
+
+### Patch Changes
+
+- [#5267](https://github.com/Kilo-Org/kilocode/pull/5267) [`1467783`](https://github.com/Kilo-Org/kilocode/commit/14677835d2a279dcf2022b4ce76394a5532e2c7b) Thanks [@maywzh](https://github.com/maywzh)! - fix: preserve extra_content for Gemini 3 thought_signature support
+
 ## 5.8.1
 
 ### Patch Changes
