@@ -35,11 +35,17 @@ jobs:
     # kilocode_change: use standard runner for fork
     runs-on: ubuntu-latest
     steps:
-      # kilocode_change: v4 + fetch-tags to ensure tags are available for changelog
+      # kilocode_change: v4 + full history for changelog
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          fetch-tags: true
+
+      # kilocode_change: explicitly fetch all tags (checkout action may skip them on forks)
+      - name: Fetch tags
+        run: |
+          git fetch --tags --force
+          echo "Tags found: $(git tag | wc -l)"
+          git tag --merged HEAD --sort=-v:refname | head -5
 
       - uses: ./.github/actions/setup-bun
 
