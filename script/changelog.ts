@@ -16,19 +16,14 @@ type Release = {
 }
 
 export async function getLatestRelease(skip?: string) {
-  // kilocode_change start: try fork first, fallback to upstream
-  for (const r of [repo, "Kilo-Org/kilocode"]) {
-    const res = await fetch(`https://api.github.com/repos/${r}/releases?per_page=100`)
-    if (!res.ok) continue
-    const releases = (await res.json()) as Release[]
-    const target = skip?.replace(/^v/, "")
+  // kilocode_change start: use git tags reachable from HEAD to avoid stale tags from old repo history
+  const tags = await $`git tag --merged HEAD --sort=-v:refname`.text()
+  const target = skip?.replace(/^v/, "")
 
-    for (const release of releases) {
-      if (release.draft) continue
-      const tag = release.tag_name.replace(/^v/, "")
-      if (target && tag === target) continue
-      return tag
-    }
+  for (const line of tags.split("\n").filter(Boolean)) {
+    const tag = line.trim().replace(/^v/, "")
+    if (target && tag === target) continue
+    return tag
   }
   // kilocode_change end
 
