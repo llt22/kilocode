@@ -35,10 +35,11 @@ jobs:
     # kilocode_change: use standard runner for fork
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # kilocode_change: v4 + fetch-tags to ensure tags are available for changelog
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          fetch-tags: true # kilocode_change: ensure tags are available for changelog
+          fetch-tags: true
 
       - uses: ./.github/actions/setup-bun
 
