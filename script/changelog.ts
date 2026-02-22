@@ -5,6 +5,10 @@ import { createOpencode } from "@kilocode/sdk/v2"
 import { parseArgs } from "util"
 import { Script } from "@opencode-ai/script"
 
+// kilocode_change start
+const repo = process.env.GITHUB_REPOSITORY ?? "Kilo-Org/kilocode"
+// kilocode_change end
+
 type Release = {
   tag_name: string
   draft: boolean
@@ -12,20 +16,21 @@ type Release = {
 }
 
 export async function getLatestRelease(skip?: string) {
-  const data = await fetch("https://api.github.com/repos/Kilo-Org/kilo/releases?per_page=100").then((res) => {
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json()
-  })
+  // kilocode_change start: try fork first, fallback to upstream
+  for (const r of [repo, "Kilo-Org/kilocode"]) {
+    const res = await fetch(`https://api.github.com/repos/${r}/releases?per_page=100`)
+    if (!res.ok) continue
+    const releases = (await res.json()) as Release[]
+    const target = skip?.replace(/^v/, "")
 
-  const releases = data as Release[]
-  const target = skip?.replace(/^v/, "")
-
-  for (const release of releases) {
-    if (release.draft) continue
-    const tag = release.tag_name.replace(/^v/, "")
-    if (target && tag === target) continue
-    return tag
+    for (const release of releases) {
+      if (release.draft) continue
+      const tag = release.tag_name.replace(/^v/, "")
+      if (target && tag === target) continue
+      return tag
+    }
   }
+  // kilocode_change end
 
   throw new Error("No releases found")
 }
@@ -43,7 +48,7 @@ export async function getCommits(from: string, to: string): Promise<Commit[]> {
 
   // Get commit data with GitHub usernames from the API
   const compare =
-    await $`gh api "/repos/Kilo-Org/kilo/compare/${fromRef}...${toRef}" --jq '.commits[] | {sha: .sha, login: .author.login, message: .commit.message}'`.text()
+    await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {sha: .sha, login: .author.login, message: .commit.message}'`.text() // kilocode_change
 
   const commitData = new Map<string, { login: string | null; message: string }>()
   for (const line of compare.split("\n").filter(Boolean)) {
@@ -201,7 +206,7 @@ export async function getContributors(from: string, to: string) {
   const fromRef = from.startsWith("v") ? from : `v${from}`
   const toRef = to === "HEAD" ? to : to.startsWith("v") ? to : `v${to}`
   const compare =
-    await $`gh api "/repos/Kilo-Org/kilo/compare/${fromRef}...${toRef}" --jq '.commits[] | {login: .author.login, message: .commit.message}'`.text()
+    await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {login: .author.login, message: .commit.message}'`.text() // kilocode_change
   const contributors = new Map<string, Set<string>>()
 
   for (const line of compare.split("\n").filter(Boolean)) {

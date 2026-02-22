@@ -38,6 +38,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          fetch-tags: true # kilocode_change: ensure tags are available for changelog
 
       - uses: ./.github/actions/setup-bun
 
