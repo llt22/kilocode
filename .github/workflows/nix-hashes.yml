@@ -26,9 +26,11 @@ jobs:
       matrix:
         include:
           - system: x86_64-linux
-            runner: blacksmith-4vcpu-ubuntu-2404
+            # kilocode_change: use standard runner for fork
+            runner: ubuntu-latest
           - system: aarch64-linux
-            runner: blacksmith-4vcpu-ubuntu-2404-arm
+            # kilocode_change: use standard runner for fork (no ARM available)
+            runner: ubuntu-latest
           - system: x86_64-darwin
             runner: macos-15-intel
           - system: aarch64-darwin
@@ -77,7 +79,8 @@ jobs:
   update-hashes:
     needs: compute-hash
     if: github.event_name != 'pull_request'
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # kilocode_change: use standard runner for fork
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository

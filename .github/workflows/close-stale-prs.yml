@@ -17,7 +17,8 @@ permissions:
 
 jobs:
   close-stale-prs:
-    runs-on: blacksmith-2vcpu-ubuntu-2404 # kilocode_change
+    # kilocode_change: use standard runner for fork
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Close inactive PRs

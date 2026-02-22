@@ -13,7 +13,8 @@ on:
 jobs:
   build:
     name: Build docs site
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # kilocode_change: use standard runner for fork
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

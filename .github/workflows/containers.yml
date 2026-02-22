@@ -16,7 +16,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # kilocode_change: use standard runner for fork
+    runs-on: ubuntu-latest
     steps:
       # kilocode_change start
       - name: Set lowercase repository owner
