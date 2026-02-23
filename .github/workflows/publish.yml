@@ -84,7 +84,7 @@ jobs:
           ./packages/opencode/script/build.ts
         env:
           KILO_VERSION: ${{ needs.version.outputs.version }}
-          KILO_RELEASE: ${{ needs.version.outputs.release }}
+          # kilocode_change: omit KILO_RELEASE to skip uploading CLI binaries to GitHub Release
           GH_TOKEN: ${{ github.token }}
 
       - uses: actions/upload-artifact@v4
