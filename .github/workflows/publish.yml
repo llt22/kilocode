@@ -134,10 +134,21 @@ jobs:
         if: needs.build-cli.outputs.version
         run: |
           VERSION="$KILO_VERSION"
-          echo "Uploading VSIX files for v${VERSION}..."
+          echo "=== VSIX files in out/ ==="
+          ls -la packages/kilo-vscode/out/ || echo "out/ directory not found"
+          echo "=== Uploading to release v${VERSION} ==="
+          FOUND=0
           for f in packages/kilo-vscode/out/*.vsix; do
-            [ -f "$f" ] && gh release upload "v${VERSION}" "$f" --clobber || true
+            if [ -f "$f" ]; then
+              FOUND=1
+              echo "Uploading: $f"
+              gh release upload "v${VERSION}" "$f" --clobber
+            fi
           done
+          if [ "$FOUND" -eq 0 ]; then
+            echo "ERROR: No .vsix files found in packages/kilo-vscode/out/"
+            exit 1
+          fi
         env:
           KILO_VERSION: ${{ needs.build-cli.outputs.version }}
           GH_TOKEN: ${{ github.token }}
