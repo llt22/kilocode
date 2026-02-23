@@ -129,6 +129,20 @@ jobs:
           name: kilo-vscode
           path: packages/kilo-vscode/out
 
+      # kilocode_change start: upload VSIX to GitHub Release directly (fork has no publish secrets)
+      - name: Upload VSIX to GitHub Release
+        if: needs.build-cli.outputs.version
+        run: |
+          VERSION="$KILO_VERSION"
+          echo "Uploading VSIX files for v${VERSION}..."
+          for f in packages/kilo-vscode/out/*.vsix; do
+            [ -f "$f" ] && gh release upload "v${VERSION}" "$f" --clobber || true
+          done
+        env:
+          KILO_VERSION: ${{ needs.build-cli.outputs.version }}
+          GH_TOKEN: ${{ github.token }}
+      # kilocode_change end
+
   # build-tauri:
   #   needs:
   #     - build-cli
@@ -246,6 +260,8 @@ jobs:
   #         APPLE_API_KEY_PATH: ${{ runner.temp }}/apple-api-key.p8
 
   publish:
+    # kilocode_change: skip on fork (requires KILO_MAINTAINER secrets, VSCE_PAT, NPM_TOKEN, AUR_KEY)
+    if: github.repository == 'Kilo-Org/kilocode'
     needs:
       - version
       - build-cli
