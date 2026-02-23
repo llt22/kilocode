@@ -16,16 +16,20 @@ type Release = {
 }
 
 export async function getLatestRelease(skip?: string) {
-  // kilocode_change start: use git tags reachable from HEAD to avoid stale tags from old repo history
-  const tags = await $`git tag --merged HEAD --sort=-v:refname`.text()
+  const data = await fetch("https://api.github.com/repos/Kilo-Org/kilo/releases?per_page=100").then((res) => {
+    if (!res.ok) throw new Error(res.statusText)
+    return res.json()
+  })
+
+  const releases = data as Release[]
   const target = skip?.replace(/^v/, "")
 
-  for (const line of tags.split("\n").filter(Boolean)) {
-    const tag = line.trim().replace(/^v/, "")
+  for (const release of releases) {
+    if (release.draft) continue
+    const tag = release.tag_name.replace(/^v/, "")
     if (target && tag === target) continue
     return tag
   }
-  // kilocode_change end
 
   throw new Error("No releases found")
 }
@@ -41,9 +45,14 @@ export async function getCommits(from: string, to: string): Promise<Commit[]> {
   const fromRef = from.startsWith("v") ? from : `v${from}`
   const toRef = to === "HEAD" ? to : to.startsWith("v") ? to : `v${to}`
 
-  // Get commit data with GitHub usernames from the API
-  const compare =
-    await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {sha: .sha, login: .author.login, message: .commit.message}'`.text() // kilocode_change
+  // kilocode_change start: gracefully handle unreachable tags on fork (unrelated histories)
+  const compareResult = await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {sha: .sha, login: .author.login, message: .commit.message}'`.nothrow().quiet()
+  if (compareResult.exitCode !== 0) {
+    console.log(`Warning: could not compare ${fromRef}...${toRef} on ${repo}, returning empty commits`)
+    return []
+  }
+  const compare = compareResult.text()
+  // kilocode_change end
 
   const commitData = new Map<string, { login: string | null; message: string }>()
   for (const line of compare.split("\n").filter(Boolean)) {
@@ -52,8 +61,14 @@ export async function getCommits(from: string, to: string): Promise<Commit[]> {
   }
 
   // Get commits that touch the relevant packages
-  const log =
-    await $`git log ${fromRef}..${toRef} --oneline --format="%H" -- packages/opencode packages/sdk packages/plugin packages/desktop packages/app sdks/vscode packages/extensions github`.text()
+  // kilocode_change start: gracefully handle unreachable tags
+  const logResult = await $`git log ${fromRef}..${toRef} --oneline --format="%H" -- packages/opencode packages/sdk packages/plugin packages/desktop packages/app sdks/vscode packages/extensions github`.nothrow().quiet()
+  if (logResult.exitCode !== 0) {
+    console.log(`Warning: git log ${fromRef}..${toRef} failed, returning empty commits`)
+    return []
+  }
+  const log = logResult.text()
+  // kilocode_change end
   const hashes = log.split("\n").filter(Boolean)
 
   const commits: Commit[] = []
@@ -200,8 +215,11 @@ export async function generateChangelog(commits: Commit[], opencode: Awaited<Ret
 export async function getContributors(from: string, to: string) {
   const fromRef = from.startsWith("v") ? from : `v${from}`
   const toRef = to === "HEAD" ? to : to.startsWith("v") ? to : `v${to}`
-  const compare =
-    await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {login: .author.login, message: .commit.message}'`.text() // kilocode_change
+  // kilocode_change start: gracefully handle unreachable tags on fork
+  const compareResult = await $`gh api "/repos/${repo}/compare/${fromRef}...${toRef}" --jq '.commits[] | {login: .author.login, message: .commit.message}'`.nothrow().quiet()
+  if (compareResult.exitCode !== 0) return new Map<string, Set<string>>()
+  const compare = compareResult.text()
+  // kilocode_change end
   const contributors = new Map<string, Set<string>>()
 
   for (const line of compare.split("\n").filter(Boolean)) {
