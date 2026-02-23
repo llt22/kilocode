@@ -13,7 +13,8 @@ if (!Script.preview) {
   const dir = process.env.RUNNER_TEMP ?? "/tmp"
   const file = `${dir}/opencode-release-notes.txt`
   await Bun.write(file, body)
-  await $`gh release create v${Script.version} -d --title "v${Script.version}" --notes-file ${file}`
+  // kilocode_change: remove -d (draft) flag since fork skips publish job which would finalize the release
+  await $`gh release create v${Script.version} --title "v${Script.version}" --notes-file ${file}`
   const release = await $`gh release view v${Script.version} --json tagName,databaseId`.json()
   output.push(`release=${release.databaseId}`)
   output.push(`tag=${release.tagName}`)
